@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --blush-pink: #FFB6C1;
+            --lavender: #E6E6FA;
+            --cream: #FFF8DC;
+            --soft-pink: #FFE4E1;
+            --light-purple: #DDA0DD;
+            --gold: #FFD700;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(45deg, var(--cream), var(--soft-pink), var(--lavender));
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .script-font {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .elegant-font {
+            font-family: 'Great Vibes', cursive;
+        }
+        
+        .floating-heart {
+            position: fixed;
+            color: var(--blush-pink);
+            pointer-events: none;
+            animation: floatUp 6s linear infinite;
+            z-index: 1000;
+        }
+        
+        @keyframes floatUp {
+            0% {
+                opacity: 1;
+                transform: translateY(100vh) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) rotate(360deg);
+            }
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: var(--gold);
+            animation: confettiFall 3s linear infinite;
+            z-index: 1000;
+        }
+        
+        .confetti:nth-child(odd) {
+            background: var(--blush-pink);
+        }
+        
+        .confetti:nth-child(3n) {
+            background: var(--lavender);
+        }
+        
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(255, 182, 193, 0.6);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(255, 182, 193, 0.6); }
+            to { box-shadow: 0 0 30px rgba(255, 182, 193, 0.9); }
+        }
+        
+        .pulse-heart {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+        
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 2px solid var(--blush-pink);
+            white-space: nowrap;
+            animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: var(--blush-pink); }
+        }
+        
+        .balloon {
+            position: absolute;
+            width: 40px;
+            height: 50px;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .balloon:nth-child(1) {
+            background: var(--blush-pink);
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .balloon:nth-child(2) {
+            background: var(--lavender);
+            left: 20%;
+            animation-delay: 1s;
+        }
+        
+        .balloon:nth-child(3) {
+            background: var(--light-purple);
+            left: 80%;
+            animation-delay: 2s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(-5deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .love-card {
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(230, 230, 250, 0.3));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 182, 193, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .love-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 182, 193, 0.3);
+        }
+        
+        .music-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: var(--blush-pink);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            font-size: 20px;
+            box-shadow: 0 4px 15px rgba(255, 182, 193, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .music-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(255, 182, 193, 0.6);
+        }
+        
+        .vintage-paper {
+            background: linear-gradient(45deg, #f4f1e8, #f9f6ed);
+            position: relative;
+            border-radius: 15px;
+        }
+        
+        .vintage-paper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(139,69,19,0.1)"/><circle cx="75" cy="75" r="0.5" fill="rgba(160,82,45,0.1)"/><circle cx="50" cy="10" r="0.8" fill="rgba(210,180,140,0.1)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
+            border-radius: 15px;
+            pointer-events: none;
+        }
+        
+        .photo-frame {
+            border: 8px solid white;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .photo-frame:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+        .img{
+            width: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .sparkle {
+            position: absolute;
+            background: var(--gold);
+            border-radius: 50%;
+            animation: sparkle 2s linear infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+        
+        /* Fireworks Animation */
+        .fireworks-container {
+            position: relative;
+            overflow: hidden;
+            min-height: 80vh;
+        }
+        
+        .firework {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            animation: firework-explosion 2s ease-out forwards;
+        }
+        
+        @keyframes firework-explosion {
+            0% {
+                opacity: 1;
+                transform: scale(0) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1) rotate(180deg);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(2) rotate(360deg);
+            }
+        }
+        
+        .firework-particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            animation: particle-spread 1.5s ease-out forwards;
+        }
+        
+        @keyframes particle-spread {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(var(--dx, 50px), var(--dy, 50px)) scale(0.3);
+            }
+        }
+        
+        .celebration-hearts {
+            position: absolute;
+            font-size: 24px;
+            animation: celebrationFloat 3s ease-in-out infinite;
+            opacity: 0.8;
+        }
+        
+        @keyframes celebrationFloat {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-30px) rotate(15deg);
+                opacity: 1;
+            }
+        }
+        
+        .future-section {
+            background: linear-gradient(135deg, 
+                rgba(255, 182, 193, 0.1) 0%, 
+                rgba(230, 230, 250, 0.1) 25%,
+                rgba(255, 248, 220, 0.1) 50%,
+                rgba(221, 160, 221, 0.1) 75%,
+                rgba(255, 182, 193, 0.1) 100%
+            );
+            position: relative;
+        }
+        
+        .scale-up {
+            opacity: 0;
+            transform: scale(0.8) translateY(40px);
+            animation: scaleUp 1.2s ease-out forwards;
+        }
+        
+        @keyframes scaleUp {
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        .rainbow-text {
+            background: linear-gradient(45deg, var(--blush-pink), var(--lavender), var(--gold), var(--light-purple));
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbowShift 3s ease-in-out infinite;
+        }
+        
+        @keyframes rainbowShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    
+    <!-- Music Toggle -->
+    <button class="music-toggle" onclick="toggleMusic()" id="musicBtn">
+        <i class="fas fa-music" id="musicIcon"></i>
+    </button>
+    
+    <!-- Welcome Section -->
+    <section class="min-h-screen flex flex-col justify-center items-center relative px-4">
+        <div class="text-center z-10">
+            <h1 class="elegant-font text-6xl md:text-8xl lg:text-9xl mb-8 fade-in" style="color: var(--blush-pink); text-shadow: 2px 2px 4px rgba(0,0,0,0.1); animation-delay: 0.5s;">
+                Happy Birthday
+            </h1>
+            <h2 class="script-font text-4xl md:text-6xl mb-12 fade-in" style="color: var(--light-purple); animation-delay: 1s;">
+                Hsu Myat Hteal
+            </h2>
+            <div class="pulse-heart mb-8 fade-in" style="animation-delay: 1.5s;">
+                <i class="fas fa-heart text-8xl glow" style="color: var(--blush-pink);"></i>
+            </div>
+            <p class="script-font text-2xl md:text-3xl fade-in" style="color: var(--light-purple); animation-delay: 2s;">
+                Today is all about celebrating you ✨
+            </p>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-3xl" style="color: var(--blush-pink);"></i>
+        </div>
+    </section>
+    
+    <!-- Photo Gallery Section -->
+    <section class="min-h-screen py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="script-font text-5xl md:text-6xl text-center mb-16 fade-in" style="color: var(--light-purple);">
+                Our Favorite Memories 📸
+            </h2>
+            
+            <div class="glass-card p-8 md:p-12">
+                <div class="relative overflow-hidden rounded-2xl">
+                    <div class="flex transition-transform duration-500 ease-in-out" id="photoCarousel">
+                        <!-- Photo placeholders -->
+                        <div class="w-full flex-shrink-0 flex justify-center items-center">
+                            <img src="./imgs/img1.jpg" class="img" alt="">
+                        </div>
+                        
+                        <div class="w-full flex-shrink-0 flex justify-center items-center">
+                            <img src="./imgs/img2.jpg" class="img" alt="">
+                            
+                        </div>
+                        
+                        <div class="w-full flex-shrink-0 flex justify-center items-center">
+                            <img src="./imgs/img3.jpg" class="img" alt="">
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation buttons -->
+                    <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 rounded-full w-12 h-12 flex items-center justify-center hover:bg-opacity-100 transition-all" onclick="previousPhoto()">
+                        <i class="fas fa-chevron-left" style="color: var(--blush-pink);"></i>
+                    </button>
+                    <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 rounded-full w-12 h-12 flex items-center justify-center hover:bg-opacity-100 transition-all" onclick="nextPhoto()">
+                        <i class="fas fa-chevron-right" style="color: var(--blush-pink);"></i>
+                    </button>
+                </div>
+                
+                <!-- Photo indicators -->
+                <div class="flex justify-center mt-6 space-x-2">
+                    <button class="w-3 h-3 rounded-full transition-all photo-indicator active" data-index="0"></button>
+                    <button class="w-3 h-3 rounded-full transition-all photo-indicator" data-index="1"></button>
+                    <button class="w-3 h-3 rounded-full transition-all photo-indicator" data-index="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Love Letter Section -->
+    <section class="min-h-screen py-16 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="script-font text-5xl md:text-6xl text-center mb-16 fade-in" style="color: var(--light-purple);">
+                My Letter to You 💌
+            </h2>
+            
+            <div class="vintage-paper p-8 md:p-12 mx-4">
+                <div class="script-font text-lg md:text-xl leading-relaxed" style="color: #4a4a4a;">
+                    <p class="mb-6 typewriter">My Dearest [Her Name],</p>
+                    
+                    <div class="space-y-6 slide-in-left" style="animation-delay: 4s;">
+                        <p>Every day with you feels like a beautiful dream that I never want to wake up from. Your laugh brightens my darkest days, and your smile makes everything in the world feel right.</p>
+                        
+                        <p>On this special day, I want you to know how grateful I am to have you in my life. You've brought so much joy, love, and magic into my world, and I can't imagine my life without you.</p>
+                        
+                        <p>You are not just my girlfriend, but my best friend, my partner in all adventures, and the love of my life. Today, we celebrate not just your birthday, but the incredible person you are and all the happiness you bring to everyone around you.</p>
+                        
+                        <p>I hope this new year of your life is filled with all your heart's desires, endless laughter, and beautiful moments that we'll treasure forever.</p>
+                        
+                        <p class="pt-4">Happy Birthday, my love! 🎂✨</p>
+                        
+                        <p class="text-right mt-8 elegant-font text-2xl">
+                            Forever yours,<br>
+                            [Your Name] ❤️
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Reasons I Love You Section -->
+    <section class="min-h-screen py-16 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="script-font text-5xl md:text-6xl text-center mb-16 fade-in" style="color: var(--light-purple);">
+                5 Reasons I Love You ❤️
+            </h2>
+            
+            <div class="space-y-8">
+                <!-- Reason 1 -->
+                <div class="love-card p-6 md:p-8 rounded-2xl slide-in-left" style="animation-delay: 0.5s;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center mr-6 glow" style="background: var(--blush-pink);">
+                            <i class="fas fa-laugh text-2xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="script-font text-2xl md:text-3xl" style="color: var(--light-purple);">Your Infectious Laugh</h3>
+                            <p class="text-gray-600 mt-2">Your laugh is my favorite song - it fills every room with joy and makes my heart skip a beat every single time 🎶</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Reason 2 -->
+                <div class="love-card p-6 md:p-8 rounded-2xl slide-in-left" style="animation-delay: 1s;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center mr-6 glow" style="background: var(--lavender);">
+                            <i class="fas fa-pizza-slice text-2xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="script-font text-2xl md:text-3xl" style="color: var(--light-purple);">You Make Everything Better</h3>
+                            <p class="text-gray-600 mt-2">You somehow make pizza taste even better, rainy days feel cozy, and ordinary moments feel magical 🍕❤️</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Reason 3 -->
+                <div class="love-card p-6 md:p-8 rounded-2xl slide-in-left" style="animation-delay: 1.5s;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center mr-6 glow" style="background: var(--light-purple);">
+                            <i class="fas fa-heart text-2xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="script-font text-2xl md:text-3xl" style="color: var(--light-purple);">Your Kind Heart</h3>
+                            <p class="text-gray-600 mt-2">Your compassion and kindness inspire me every day - you make the world a brighter place just by being in it 💖</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Reason 4 -->
+                <div class="love-card p-6 md:p-8 rounded-2xl slide-in-left" style="animation-delay: 2s;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center mr-6 glow" style="background: var(--gold);">
+                            <i class="fas fa-star text-2xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="script-font text-2xl md:text-3xl" style="color: var(--light-purple);">Your Beautiful Soul</h3>
+                            <p class="text-gray-600 mt-2">You shine from the inside out - your beauty isn't just in your looks, but in every gesture and every word ✨</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Reason 5 -->
+                <div class="love-card p-6 md:p-8 rounded-2xl slide-in-left" style="animation-delay: 2.5s;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center mr-6 glow" style="background: var(--blush-pink);">
+                            <i class="fas fa-infinity text-2xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="script-font text-2xl md:text-3xl" style="color: var(--light-purple);">You're Simply You</h3>
+                            <p class="text-gray-600 mt-2">Every little quirk, every dream, every moment of being yourself - that's what makes you perfect to me 🌹</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Future Together Section with Fireworks -->
+    <section class="future-section fireworks-container py-20 px-4" id="futureSection">
+        <div class="max-w-4xl mx-auto text-center relative">
+            <!-- Floating Hearts -->
+            <div class="celebration-hearts" style="top: 10%; left: 15%; animation-delay: 0s;">💕</div>
+            <div class="celebration-hearts" style="top: 20%; right: 20%; animation-delay: 1s;">💖</div>
+            <div class="celebration-hearts" style="bottom: 30%; left: 10%; animation-delay: 2s;">💝</div>
+            <div class="celebration-hearts" style="bottom: 40%; right: 15%; animation-delay: 0.5s;">❤️</div>
+            <div class="celebration-hearts" style="top: 50%; left: 80%; animation-delay: 1.5s;">💗</div>
+            <div class="celebration-hearts" style="top: 70%; right: 70%; animation-delay: 2.5s;">💘</div>
+            
+            <div class="scale-up" style="animation-delay: 0.5s;">
+                <h2 class="elegant-font text-6xl md:text-8xl lg:text-9xl mb-8 rainbow-text">
+                    To Many More
+                </h2>
+                <h3 class="script-font text-4xl md:text-6xl mb-12" style="color: var(--light-purple);">
+                    Birthdays Together!
+                </h3>
+                
+                <div class="mb-12">
+                    <i class="fas fa-birthday-cake text-6xl md:text-8xl glow pulse-heart" style="color: var(--blush-pink);"></i>
+                </div>
+                
+                <div class="glass-card p-8 md:p-12 mx-4">
+                    <p class="script-font text-xl md:text-2xl leading-relaxed mb-6" style="color: var(--light-purple);">
+                        Here's to celebrating many more years of your amazing life, countless adventures together, and endless moments of joy and love! 🎉✨
+                    </p>
+                    <div class="flex justify-center space-x-8 mt-8 text-4xl">
+                        <div class="pulse-heart" style="animation-delay: 0s;">🎂</div>
+                        <div class="pulse-heart" style="animation-delay: 0.3s;">🎈</div>
+                        <div class="pulse-heart" style="animation-delay: 0.6s;">🎊</div>
+                        <div class="pulse-heart" style="animation-delay: 0.9s;">💐</div>
+                        <div class="pulse-heart" style="animation-delay: 1.2s;">🥳</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Fireworks will be generated here by JavaScript -->
+        <div id="fireworksCanvas" class="absolute inset-0 pointer-events-none"></div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-12 text-center">
+        <div class="glass-card mx-4 p-8 max-w-2xl mx-auto">
+            <div class="pulse-heart mb-6">
+                <i class="fas fa-heart text-4xl" style="color: var(--blush-pink);"></i>
+            </div>
+            <p class="script-font text-2xl md:text-3xl mb-4" style="color: var(--light-purple);">
+                Happy Birthday, Beautiful! 🎉
+            </p>
+            <p class="text-gray-600">
+                Here's to another year of adventures, laughter, and love ✨
+            </p>
+        </div>
+    </footer>
+    
+    <!-- Hidden audio element for background music -->
+    <audio id="backgroundMusic" loop>
+        <!-- Add your music source here -->
+        <source src="./mp3/backgroundMuisc.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script>
+        // Photo carousel functionality
+        let currentPhoto = 0;
+        const totalPhotos = 3;
+        
+        function nextPhoto() {
+            currentPhoto = (currentPhoto + 1) % totalPhotos;
+            updateCarousel();
+        }
+        
+        function previousPhoto() {
+            currentPhoto = (currentPhoto - 1 + totalPhotos) % totalPhotos;
+            updateCarousel();
+        }
+        
+        function updateCarousel() {
+            const carousel = document.getElementById('photoCarousel');
+            carousel.style.transform = `translateX(-${currentPhoto * 100}%)`;
+            
+            // Update indicators
+            const indicators = document.querySelectorAll('.photo-indicator');
+            indicators.forEach((indicator, index) => {
+                if (index === currentPhoto) {
+                    indicator.style.backgroundColor = 'var(--blush-pink)';
+                    indicator.classList.add('active');
+                } else {
+                    indicator.style.backgroundColor = 'rgba(255, 182, 193, 0.3)';
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+        
+        // Initialize indicators
+        document.querySelectorAll('.photo-indicator').forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentPhoto = index;
+                updateCarousel();
+            });
+        });
+        
+        // Auto-advance carousel
+        setInterval(nextPhoto, 5000);
+        
+        // Music toggle functionality
+        let musicPlaying = false;
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        const musicBtn = document.getElementById('musicBtn');
+        const musicIcon = document.getElementById('musicIcon');
+        
+        function toggleMusic() {
+            if (musicPlaying) {
+                backgroundMusic.pause();
+                musicIcon.className = 'fas fa-music';
+                musicPlaying = false;
+            } else {
+                // Note: Auto-play is restricted by browsers, so this may not work without user interaction
+                backgroundMusic.play().catch(e => {
+                    console.log('Auto-play prevented by browser');
+                });
+                musicIcon.className = 'fas fa-pause';
+                musicPlaying = true;
+            }
+        }
+        
+        // Create floating hearts
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'floating-heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+        
+        // Create confetti
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+            confetti.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(confetti);
+            
+            setTimeout(() => {
+                confetti.remove();
+            }, 5000);
+        }
+        
+        // Create sparkles around elements
+        function createSparkle(element) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.width = sparkle.style.height = (Math.random() * 4 + 2) + 'px';
+            sparkle.style.left = Math.random() * element.offsetWidth + 'px';
+            sparkle.style.top = Math.random() * element.offsetHeight + 'px';
+            sparkle.style.animationDelay = Math.random() * 2 + 's';
+            
+            element.style.position = 'relative';
+            element.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 2000);
+        }
+        
+        // Fireworks functionality
+        function createFirework(x, y) {
+            const colors = ['#FFB6C1', '#E6E6FA', '#FFD700', '#DDA0DD', '#FF69B4', '#DA70D6'];
+            const fireworksCanvas = document.getElementById('fireworksCanvas');
+            
+            // Create main firework burst
+            for (let i = 0; i < 12; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'firework-particle';
+                particle.style.left = x + 'px';
+                particle.style.top = y + 'px';
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Calculate random direction
+                const angle = (i * 30) + Math.random() * 30 - 15;
+                const distance = 50 + Math.random() * 100;
+                const dx = Math.cos(angle * Math.PI / 180) * distance;
+                const dy = Math.sin(angle * Math.PI / 180) * distance;
+                
+                particle.style.setProperty('--dx', dx + 'px');
+                particle.style.setProperty('--dy', dy + 'px');
+                
+                fireworksCanvas.appendChild(particle);
+                
+                setTimeout(() => {
+                    particle.remove();
+                }, 1500);
+            }
+        }
+        
+        // Create multiple fireworks
+        function createFireworkShow() {
+            const section = document.getElementById('futureSection');
+            const rect = section.getBoundingClientRect();
+            
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    const x = Math.random() * rect.width;
+                    const y = Math.random() * rect.height * 0.6 + rect.height * 0.2;
+                    createFirework(x, y);
+                }, i * 300);
+            }
+        }
+        
+        // Scroll-triggered fireworks
+        let fireworksTriggered = false;
+        
+        const futureObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !fireworksTriggered) {
+                    fireworksTriggered = true;
+                    setTimeout(() => {
+                        createFireworkShow();
+                    }, 500);
+                    
+                    // Create continuous fireworks while in view
+                    const fireworkInterval = setInterval(() => {
+                        if (entry.isIntersecting) {
+                            createFireworkShow();
+                        } else {
+                            clearInterval(fireworkInterval);
+                        }
+                    }, 3000);
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        futureObserver.observe(document.getElementById('futureSection'));
+        
+        // Animation triggers
+        setInterval(createFloatingHeart, 2000);
+        setInterval(createConfetti, 300);
+        
+        // Add sparkles to glowing elements
+        setInterval(() => {
+            const glowElements = document.querySelectorAll('.glow');
+            glowElements.forEach(element => {
+                if (Math.random() < 0.3) {
+                    createSparkle(element);
+                }
+            });
+        }, 1000);
+        
+        // Smooth scrolling for better experience
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Initialize carousel
+        updateCarousel();
+        
+        // Add scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        }
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in, .slide-in-left, .scale-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
